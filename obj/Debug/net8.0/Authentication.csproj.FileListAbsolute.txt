@@ -43,3 +43,4 @@ C:\Users\lizhe\source\repos\Authentication\Authentication\obj\Debug\net8.0\refin
 C:\Users\lizhe\source\repos\Authentication\Authentication\obj\Debug\net8.0\Authentication.pdb
 C:\Users\lizhe\source\repos\Authentication\Authentication\obj\Debug\net8.0\Authentication.genruntimeconfig.cache
 C:\Users\lizhe\source\repos\Authentication\Authentication\obj\Debug\net8.0\ref\Authentication.dll
+C:\Users\lizhe\source\repos\Authentication\Authentication\obj\Debug\net8.0\Authentication.sourcelink.json

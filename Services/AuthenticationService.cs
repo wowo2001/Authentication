@@ -30,7 +30,7 @@ namespace Authentication.Services
             username = createAccountRequest.username,
             password = createAccountRequest.password,
             securitytoken = GenerateToken(createAccountRequest.username+ DateTime.Now.ToString()),
-            lastTokenUpdateTime = DateTime.Now.ToString()
+            lastTokenUpdateTime = DateTime.Now.ToString("dd/MM/yyyy h:mm:ss tt")
             };
             if (await _authenticationData.AddProfileData(profile))
             {
@@ -120,7 +120,8 @@ namespace Authentication.Services
         {
             string format = "dd/MM/yyyy h:mm:ss tt";
             TimeSpan timeDifference = DateTime.Now - DateTime.ParseExact(profile.lastTokenUpdateTime, format, CultureInfo.InvariantCulture);
-            if (timeDifference < TimeSpan.FromMinutes(1))
+
+            if (Math.Abs(timeDifference.Minutes) < 1)
             {
                 LoginResponse loginResponse = new LoginResponse()
                 {
