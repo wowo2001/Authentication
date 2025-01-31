@@ -3,6 +3,7 @@ using Authentication.Data;
 using Amazon.DynamoDBv2.Model;
 using System.Security.Cryptography;
 using System.Text;
+using System.Globalization;
 
 namespace Authentication.Services
 {
@@ -117,7 +118,8 @@ namespace Authentication.Services
 
         private async Task<LoginResponse> RefreshToken(Profile profile)
         {
-            TimeSpan timeDifference = DateTime.Now - DateTime.Parse(profile.lastTokenUpdateTime);
+            string format = "dd/MM/yyyy h:mm:ss tt";
+            TimeSpan timeDifference = DateTime.Now - DateTime.ParseExact(profile.lastTokenUpdateTime, format, CultureInfo.InvariantCulture);
             if (timeDifference < TimeSpan.FromMinutes(1))
             {
                 LoginResponse loginResponse = new LoginResponse()
