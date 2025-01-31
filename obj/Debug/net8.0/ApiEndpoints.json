@@ -1,0 +1,106 @@
+[
+  {
+    "ContainingType": "Authentication.Controllers.AuthenticationController",
+    "Method": "CreateAccount",
+    "RelativePath": "authentication/createAccount",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createAccountRequest",
+        "Type": "Authentication.Models.PasswordLoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Authentication.Models.LoginResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Authentication.Controllers.AuthenticationController",
+    "Method": "getUsername",
+    "RelativePath": "authentication/getUsername",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tokenLoginRequest",
+        "Type": "Authentication.Models.TokenLoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Authentication.Controllers.AuthenticationController",
+    "Method": "PasswordLogin",
+    "RelativePath": "authentication/passwordLogin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "passwordLoginRequest",
+        "Type": "Authentication.Models.PasswordLoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Authentication.Models.LoginResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Authentication.Controllers.AuthenticationController",
+    "Method": "TokenLogin",
+    "RelativePath": "authentication/tokenLogin",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tokenLoginRequest",
+        "Type": "Authentication.Models.TokenLoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Authentication.Models.LoginResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]
