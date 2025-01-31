@@ -133,7 +133,7 @@ namespace Authentication.Services
             else
             {
                 profile.securitytoken = GenerateToken(profile.username + DateTime.Now.ToString());
-                profile.lastTokenUpdateTime = DateTime.Now.ToString();
+                profile.lastTokenUpdateTime = DateTime.Now.ToString("dd/MM/yyyy h:mm:ss");
                 if (await _authenticationData.UpdateProfileData(profile))
                 {
                     LoginResponse loginResponse = new LoginResponse()
