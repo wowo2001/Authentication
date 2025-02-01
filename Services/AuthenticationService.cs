@@ -30,7 +30,7 @@ namespace Authentication.Services
             username = createAccountRequest.username,
             password = createAccountRequest.password,
             securitytoken = GenerateToken(createAccountRequest.username+ DateTime.Now.ToString()),
-            lastTokenUpdateTime = DateTime.Now.ToString("dd/MM/yyyy h:mm:ss")
+            lastTokenUpdateTime = DateTime.Now.ToString("dd/MM/yyyy h:mm:ss tt")
             };
             if (await _authenticationData.AddProfileData(profile))
             {
@@ -118,7 +118,7 @@ namespace Authentication.Services
 
         private async Task<LoginResponse> RefreshToken(Profile profile)
         {
-            string format = "dd/MM/yyyy h:mm:ss";
+            string format = "dd/MM/yyyy h:mm:ss tt";
             TimeSpan timeDifference = DateTime.Now - DateTime.ParseExact(profile.lastTokenUpdateTime, format, CultureInfo.InvariantCulture);
 
             if (Math.Abs(timeDifference.Hours) < 1)
@@ -133,7 +133,7 @@ namespace Authentication.Services
             else
             {
                 profile.securitytoken = GenerateToken(profile.username + DateTime.Now.ToString());
-                profile.lastTokenUpdateTime = DateTime.Now.ToString("dd/MM/yyyy h:mm:ss");
+                profile.lastTokenUpdateTime = DateTime.Now.ToString("dd/MM/yyyy h:mm:ss tt");
                 if (await _authenticationData.UpdateProfileData(profile))
                 {
                     LoginResponse loginResponse = new LoginResponse()
