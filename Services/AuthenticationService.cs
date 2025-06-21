@@ -121,7 +121,7 @@ namespace Authentication.Services
             string format = "dd/MM/yyyy h:mm:ss tt";
             TimeSpan timeDifference = DateTime.Now - DateTime.ParseExact(profile.lastTokenUpdateTime, format, CultureInfo.InvariantCulture);
 
-            if (Math.Abs(timeDifference.Hours) < 1)
+            if (Math.Abs(timeDifference.Days) < 30)
             {
                 LoginResponse loginResponse = new LoginResponse()
                 {
